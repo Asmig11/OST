@@ -1,0 +1,49 @@
+#box{
+  background-color: #F6F9FA;
+}
+
+label{
+  color: #8EB9CE;
+  font-size: 13px;
+  letter-spacing: 1.75;
+}
+
+.headingh{
+  color: #8EB9CE;
+  font-size: 40px;
+  letter-spacing: 1.75;
+}
+
+input[type=text], #country, #info{
+    box-sizing: border-box;
+    border: 2px solid #d2e3e5;
+}
+
+#socialm{
+  border: 2px solid #6C9BA9;
+}
+
+#optional{
+  color: #8EB9CE;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#socialtext{
+  color: #597A84;
+  font-size: 14px;
+}
+
+#save{
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 2;
+  background-color: #E4B030
+}
+
+#cancel{
+  color: #438BAD;
+  font-size: 14px;
+  letter-spacing: 2;
+  border: 2px solid #b4d1de;
+}
