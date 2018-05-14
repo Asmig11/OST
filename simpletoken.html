@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../js/jquery.validate.js"></script>
 </head>
 
   <body>
@@ -327,138 +329,144 @@
             </div>
             <div class="container">
                 <button type="submit" class="btn btn-warning" id="save">SAVE</button>
-                <button type="button" class="btn btn-outline-primary" id="cancel">CANCEL</button>
+                <button type="button" class="btn btn-outline-primary" id="cancel" value="Reset Form" onClick="this.form.reset()">CANCEL</button>
             </div>
         </form>
       </div>
     </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" charset="utf-8"></script>
-  <script>
-    $(document).ready(function(){
-      $('#dateofjoin').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" charset="utf-8"></script>
+    <script>
+      $(document).ready(function(){
+        $('#dateofjoin').datepicker({
+          format: "yyyy-mm-dd",
+          autoclose: true
+        });
       });
-    });
-  </script>
-  <script type="text/javascript">
-		$.validator.setDefaults( {
-			submitHandler: function () {
-				alert( "submitted!" );
-			}
-		} );
+    </script>
+    <script type="text/javascript">
+  		$.validator.setDefaults( {
+  			submitHandler: function () {
+  				alert( "submitted!" );
+  			}
+  		} );
 
-    $( document ).ready( function () {
-		  $( "#infoform" ).validate( {
-				rules: {
-					firstname: {
-            name: ^[a-zA-Z\.]{2,50}$
-            required:true,
-            maxlength: 50,
-            minlength: 3
-          },
-					lastname: {
-            name: ^[a-zA-Z\.]{2,50}$
-            required:true,
-            maxlength: 50,
-            minlength: 3
-          },
-          info: {
-            required:true,
-            maxlength: 220,
-            minlength: 5
-          },
-          company: {
-            name: ^[a-zA-Z0-9-\.]{,50}$
-            required: true,
-            maxlength: 50
-          },
-          designation: {
-            name: ^[a-zA-Z0-9-\.]{1,50}$
-            required:true,
-            maxlength: 50,
-            minlength: 2
-          },
-          country: "required",
-          dateofjoin: "required",
-          socialm: {
-            maxlength: 20
-          }
-				},
-				messages: {
-					firstname: {
-            required: "Please enter your First Name.",
-            name: "Only Alphabets and . (dot) are allowed.",
-            minlength: "Your First Name must consist of at least 3 characters.",
-            maxlength: "Your First Name can consist of at most 50 characters."
-          },
-					lastname: {
-            required: "Please enter your Last Name.",
-            name: "Only Alphabets and . (dot) are allowed.",
-            minlength: "Your Last Name must consist of at least 3 characters.",
-            maxlength: "Your Last Name can consist of at most 50 characters."
-          },
-          info: {
-            required: "Please enter your description.",
-            minlength: "Your description must consist of at least 3 characters.",
-            maxlength: "Your description can consist of at most 50 characters."
-          },
-          company: {
-            required: "Please enter your Company's Name.",
-            name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
-            maxlength: "Your Company's Name can consist of at most 50 characters."
-          },
-          designation: {
-            required: "Please enter your Designation.",
-            name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
-            minlength: "Your Designation must consist of at least 2 characters.",
-            maxlength: "Your Designation can consist of at most 50 characters."
-          },
-          country: "Please enter your country",
-          dateofjoin: "Please enter your Date of Joining",
-          socialm: {
-            maxlength: "Your URL can consist of at most 20 characters."
-          }
-				},
-				errorElement: "em",
-				errorPlacement: function ( error, element ) {
-					// Add the `help-block` class to the error element
-					error.addClass( "help-block" );
+      $( document ).ready( function () {
+        $('#dateofjoin').datepicker({
+          format: "yyyy-mm-dd",
+          autoclose: true
+        });
+  		  $( "#infoform" ).validate( {
+  				rules: {
+  					firstname: {
+              name: ^[a-zA-Z\.]{2,50}$
+              required:true,
+              maxlength: 50,
+              minlength: 3
+            },
+  					lastname: {
+              name: ^[a-zA-Z\.]{2,50}$
+              required:true,
+              maxlength: 50,
+              minlength: 3
+            },
+            info: {
+              required:true,
+              maxlength: 220,
+              minlength: 5
+            },
+            company: {
+              name: ^[a-zA-Z0-9-\.]{,50}$
+              required: true,
+              maxlength: 50
+            },
+            designation: {
+              name: ^[a-zA-Z0-9-\.]{1,50}$
+              required:true,
+              maxlength: 50,
+              minlength: 2
+            },
+            country: "required",
+            dateofjoin: "required",
+            socialm: {
+              name: /^([w-.]+@([w-]+.)+[w-]{2,4})?$/,
+              maxlength: 20
+            }
+  				},
+  				messages: {
+  					firstname: {
+              required: "Please enter your First Name.",
+              name: "Only Alphabets and . (dot) are allowed.",
+              minlength: "Your First Name must consist of at least 3 characters.",
+              maxlength: "Your First Name can consist of at most 50 characters."
+            },
+  					lastname: {
+              required: "Please enter your Last Name.",
+              name: "Only Alphabets and . (dot) are allowed.",
+              minlength: "Your Last Name must consist of at least 3 characters.",
+              maxlength: "Your Last Name can consist of at most 50 characters."
+            },
+            info: {
+              required: "Please enter your description.",
+              minlength: "Your description must consist of at least 3 characters.",
+              maxlength: "Your description can consist of at most 50 characters."
+            },
+            company: {
+              required: "Please enter your Company's Name.",
+              name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+              maxlength: "Your Company's Name can consist of at most 50 characters."
+            },
+            designation: {
+              required: "Please enter your Designation.",
+              name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+              minlength: "Your Designation must consist of at least 2 characters.",
+              maxlength: "Your Designation can consist of at most 50 characters."
+            },
+            country: "Please enter your country",
+            dateofjoin: "Please enter your Date of Joining",
+            socialm: {
+              name: "Enter a valid URL.",
+              maxlength: "Your URL can consist of at most 20 characters."
+            }
+  				},
+  				errorElement: "em",
+  				errorPlacement: function ( error, element ) {
+  					// Add the `help-block` class to the error element
+  					error.addClass( "help-block" );
 
-					// Add `has-feedback` class to the parent div.form-group
-					// in order to add icons to inputs
-					element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+  					// Add `has-feedback` class to the parent div.form-group
+  					// in order to add icons to inputs
+  					element.parents( ".col-sm-5" ).addClass( "has-feedback" );
 
-					if ( element.prop( "type" ) === "checkbox" ) {
-						error.insertAfter( element.parent( "label" ) );
-					} else {
-						error.insertAfter( element );
-					}
+  					if ( element.prop( "type" ) === "checkbox" ) {
+  						error.insertAfter( element.parent( "label" ) );
+  					} else {
+  						error.insertAfter( element );
+  					}
 
-					// Add the span element, if doesn't exists, and apply the icon classes to it.
-					if ( !element.next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-					}
-				},
-				success: function ( label, element ) {
-					// Add the span element, if doesn't exists, and apply the icon classes to it.
-					if ( !$( element ).next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-					}
-				},
-				highlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-				},
-				unhighlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-				}
-			} );
-		} );
-	</script>
+  					// Add the span element, if doesn't exists, and apply the icon classes to it.
+  					if ( !element.next( "span" )[ 0 ] ) {
+  						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+  					}
+  				},
+  				success: function ( label, element ) {
+  					// Add the span element, if doesn't exists, and apply the icon classes to it.
+  					if ( !$( element ).next( "span" )[ 0 ] ) {
+  						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+  					}
+  				},
+  				highlight: function ( element, errorClass, validClass ) {
+  					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+  					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+  				},
+  				unhighlight: function ( element, errorClass, validClass ) {
+  					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+  					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+  				}
+  			} );
+  		} );
+  	</script>
   </body>
 </html>
