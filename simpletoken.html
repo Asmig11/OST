@@ -351,14 +351,17 @@
 			}
 		} );
 
-		$( "#infoform" ).validate( {
+    $( document ).ready( function () {
+		  $( "#infoform" ).validate( {
 				rules: {
 					firstname: {
+            name: ^[a-zA-Z\.]{2,50}$
             required:true,
             maxlength: 50,
             minlength: 3
           },
 					lastname: {
+            name: ^[a-zA-Z\.]{2,50}$
             required:true,
             maxlength: 50,
             minlength: 3
@@ -369,39 +372,56 @@
             minlength: 5
           },
           company: {
+            name: ^[a-zA-Z0-9-\.]{,50}$
             required: true,
             maxlength: 50
           },
           designation: {
+            name: ^[a-zA-Z0-9-\.]{1,50}$
             required:true,
             maxlength: 50,
             minlength: 2
           },
           country: "required",
-          dateofjoin: "required"
+          dateofjoin: "required",
+          socialm: {
+            maxlength: 20
+          }
 				},
 				messages: {
 					firstname: {
-            required: "Please enter your First Name",
-            minlength: ,
-            maxlength:
+            required: "Please enter your First Name.",
+            name: "Only Alphabets and . (dot) are allowed.",
+            minlength: "Your First Name must consist of at least 3 characters.",
+            maxlength: "Your First Name can consist of at most 50 characters."
+          },
+					lastname: {
+            required: "Please enter your Last Name.",
+            name: "Only Alphabets and . (dot) are allowed.",
+            minlength: "Your Last Name must consist of at least 3 characters.",
+            maxlength: "Your Last Name can consist of at most 50 characters."
+          },
+          info: {
+            required: "Please enter your description.",
+            minlength: "Your description must consist of at least 3 characters.",
+            maxlength: "Your description can consist of at most 50 characters."
+          },
+          company: {
+            required: "Please enter your Company's Name.",
+            name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+            maxlength: "Your Company's Name can consist of at most 50 characters."
+          },
+          designation: {
+            required: "Please enter your Designation.",
+            name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+            minlength: "Your Designation must consist of at least 2 characters.",
+            maxlength: "Your Designation can consist of at most 50 characters."
+          },
+          country: "Please enter your country",
+          dateofjoin: "Please enter your Date of Joining",
+          socialm: {
+            maxlength: "Your URL can consist of at most 20 characters."
           }
-					lastname1: "Please enter your lastname",
-					username1: {
-						required: "Please enter a username",
-						minlength: "Your username must consist of at least 2 characters"
-					},
-					password1: {
-						required: "Please provide a password",
-						minlength: "Your password must be at least 5 characters long"
-					},
-					confirm_password1: {
-						required: "Please provide a password",
-						minlength: "Your password must be at least 5 characters long",
-						equalTo: "Please enter the same password as above"
-					},
-					email1: "Please enter a valid email address",
-					agree1: "Please accept our policy"
 				},
 				errorElement: "em",
 				errorPlacement: function ( error, element ) {
