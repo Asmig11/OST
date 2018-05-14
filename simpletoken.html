@@ -16,7 +16,7 @@
     <div class="container">
       <div class="row">
 
-        <form class="form-horizontal" role="form" id="infoform">
+        <form id="infoform" class="form-horizontal" role="form">
             <div class="headingh"> Profile</div>
             <div class="form-group">
                 <label for="firstname" class="col-sm-4 control-label">FIRST NAME</label>
@@ -338,14 +338,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" charset="utf-8"></script>
-    <script>
-      $(document).ready(function(){
-        $('#dateofjoin').datepicker({
-          format: "yyyy-mm-dd",
-          autoclose: true
-        });
-      });
-    </script>
+
     <script type="text/javascript">
   		$.validator.setDefaults( {
   			submitHandler: function () {
