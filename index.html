@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha18/css/tempusdominus-bootstrap-4.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
 
@@ -46,7 +46,8 @@
               <div class="row form-group">
                 <div class="col-sm-12 col-lg-6">
                   <label for="country" class="col-sm-4 control-label">COUNTRY</label>
-                  <select class="custom-select" id="country">
+                  <select class="custom-select" id="country" name="country">
+                    <option value="">Select Country</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AX">Åland Islands</option>
                     <option value="AL">Albania</option>
@@ -300,12 +301,12 @@
                 </div>
                 <div class="col-sm-12 col-lg-6">
                   <label for="dateofjoin" class="col-sm-4 control-label">DATE OF JOINING</label>
-                  <div class="input-group" id="dategroup">
-                    <div class="input-group-text">
-                      <i class="fas fa-calendar-alt"></i>
+                  <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" name="datepicker" data-target="#datetimepicker4"/>
+                    <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
-                      <input type="date" class="form-control" id="dateofjoin" name="dateofjoin" placeholder="10/12/2015">
-                  </div>
+                </div>
                 </div>
               </div>
               <div class="row" style="padding-top: 1%;">
@@ -333,20 +334,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha18/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" charset="utf-8"></script>
-    <!-- <script>
-      $(document).ready(function(){
-        $('#dateofjoin').datepicker({
-          format: "dd-mm-yyyy",
-          autoclose: true
-        });
+    <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker4').datetimepicker({
+              format: 'L'
+          });
       });
-    </script> -->
-    <script>
-      $('input[type="text"]').attr("pattern", '^[a-z\d\.]{5,}$');
     </script>
     <script type="text/javascript">
   		$.validator.setDefaults( {
@@ -387,11 +386,11 @@
               minlength: 2
             },
             country: "required",
-            // datepicker: {
-            //   required: true,
-            //   date: true
-            // },
-            dateofjoin: "required",
+            datepicker: {
+              required: true,
+              date: true
+            },
+            // dateofjoin: "required",
             socialm: {
               maxlength: 20
             }
@@ -426,10 +425,10 @@
               maxlength: "Your Designation can consist of at most 50 characters."
             },
             country: "Please enter your country",
-            // datepicker: {
-            //   required: "Please enter your Date of Joining"
-            // },
-            dateofjoin: "Please enter your Date of Joining",
+            datepicker: {
+              required: "Please enter your Date of Joining"
+            },
+            // dateofjoin: "Please enter your Date of Joining",
             socialm: {
               name: "Enter a valid URL.",
               maxlength: "Your URL can consist of at most 20 characters."
