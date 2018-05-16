@@ -8,47 +8,44 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 </head>
 
   <body>
     <div class="container">
       <div class="row">
-
-        <form id="infoform" class="form-horizontal" role="form">
-            <div class="headingh"> Profile</div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">FIRST NAME</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Michael">
+        <div class="col-sm-12">
+          <div class="headingh"> Profile</div>
+            <form id="infoform" class="form-horizontal" role="form" method="post">
+              <div class="row"  style="padding-top: 1%;">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="firstname" class="control-label">FIRST NAME</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Michael">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="lastname" class="col-sm-4 control-label">LAST NAME</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Myers">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="lastname" class="control-label">LAST NAME</label>
+                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Myers">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="feedback" class="col-sm-4 control-label">DESCRIBE YOURSELF</label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" id="info" name="info" rows="12" placeholder="Hi I am Michael Myers..."></textarea>
+              </div>
+              <div class="row"  style="padding-top: 1%;">
+                <div class="col-lg-6 col-sm-12">
+                  <label for="info" class="control-label">DESCRIBE YOURSELF</label>
+                  <textarea class="form-control" id="info" name="info" rows="8" placeholder="Hi I am Michael Myers..."></textarea>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">COMPANY NAME</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="company" name="company" placeholder="OST">
+              </div>
+              <div class="row"  style="padding-top: 1%;">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="company" class="control-label">COMPANY NAME</label>
+                  <input type="text" class="form-control" id="company" name="company" placeholder="OST">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">DESIGNATION</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="designation" name="designation" placeholder="Software Developer">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="firstname" class="col-sm-4 control-label">DESIGNATION</label>
+                  <input type="text" class="form-control" id="designation" name="designation" placeholder="Software Developer">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="country" class="col-sm-4 control-label">COUNTRY</label>
-                <div class="col-sm-8" >
+              </div>
+              <div class="row form-group">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="country" class="col-sm-4 control-label">COUNTRY</label>
                   <select class="custom-select" id="country">
                     <option value="AF">Afghanistan</option>
                     <option value="AX">Åland Islands</option>
@@ -301,49 +298,55 @@
                     <option value="ZW">Zimbabwe</option>
                   </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="firstname" class="col-sm-4 control-label">DATE OF JOINING</label>
-                <div class="input-group col-sm-8" id="dategroup">
-                    <input type="text" class="form-control" id="dateofjoin" name="dateofjoin" placeholder="10/12/2015">
+                <div class="col-sm-12 col-lg-6">
+                  <label for="dateofjoin" class="col-sm-4 control-label">DATE OF JOINING</label>
+                  <div class="input-group" id="dategroup">
                     <div class="input-group-text">
                       <i class="fas fa-calendar-alt"></i>
                     </div>
+                      <input type="date" class="form-control" id="dateofjoin" name="dateofjoin" placeholder="10/12/2015">
+                  </div>
                 </div>
-            </div>
-            <div class="form-group" id="box">
-                <label for="firstname" class="col-sm-4 control-label">LINKEDIN<span id="optional">(Optional)</span></label>
-                <div class="col-sm-8">
-                    <input type="url" class="form-control" id="socialm" name="linkedin" placeholder="https://linkedin.com/michaelmyers">
-                    <br><div id="socialtext">This section is optional, if you wish to remove the CTA from the website leave this section blank.</div>
+              </div>
+              <div class="row" style="padding-top: 1%;">
+                <div class="col-sm-12 col-lg-6" id="box">
+                  <label for="linkedin" class="control-label">LINKEDIN<span id="optional">(Optional)</span></label>
+                  <input type="url" class="form-control" id="socialm" name="linkedin" placeholder="https://linkedin.com/michaelmyers">
+                  <br><div id="socialtext">This section is optional, if you wish to remove the CTA from the website leave this section blank.</div>
                 </div>
-            </div>
-            <div class="form-group" id="box">
-                <label for="firstname" class="col-sm-4 control-label">INSTAGRAM<span id="optional">(Optional)</span></label>
-                <div class="col-sm-8">
-                    <input type="url" class="form-control" id="socialm" name="instagram" placeholder="https://instagram.com/michaelmyers">
-                    <br><div id="socialtext">This section is optional, if you wish to remove the CTA from the website leave this section blank.</div>
+              </div>
+              <div class="row"  style="padding-top: 1%;">
+                <div class="col-sm-12 col-lg-6" id="box">
+                  <label for="firstname" class="col-sm-4 control-label">INSTAGRAM<span id="optional">(Optional)</span></label>
+                  <input type="url" class="form-control" id="socialm" name="instagram" placeholder="https://instagram.com/michaelmyers">
+                  <br><div id="socialtext">This section is optional, if you wish to remove the CTA from the website leave this section blank.</div>
                 </div>
-            </div>
-            <div class="container">
+              </div>
+              <div class="row"  style="padding-top: 1%;">
                 <button type="submit" class="btn btn-warning" id="save">SAVE</button>
                 <button type="button" class="btn btn-outline-primary" id="cancel" value="Reset Form" onClick="this.form.reset()">CANCEL</button>
-            </div>
-        </form>
+              </div>
+          </form>
+        </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="../js/jquery.validate.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" charset="utf-8"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function(){
         $('#dateofjoin').datepicker({
-          format: "yyyy-mm-dd",
+          format: "dd-mm-yyyy",
           autoclose: true
         });
       });
+    </script> -->
+    <script>
+      $('input[type="text"]').attr("pattern", '^[a-z\d\.]{5,}$');
     </script>
     <script type="text/javascript">
   		$.validator.setDefaults( {
@@ -356,14 +359,14 @@
   		  $( "#infoform" ).validate( {
   				rules: {
   					firstname: {
-              name: ^[a-zA-Z\.]{2,50}$
               required:true,
+              pattern: '^[a-zA-Z][a-zA-Z0-9-_\.]{1,}$',
               maxlength: 50,
               minlength: 3
             },
   					lastname: {
-              name: ^[a-zA-Z\.]{2,50}$
               required:true,
+              pattern: '^[a-zA-Z][a-zA-Z0-9-_\.]{1,}$',
               maxlength: 50,
               minlength: 3
             },
@@ -373,33 +376,36 @@
               minlength: 5
             },
             company: {
-              name: ^[a-zA-Z0-9-\.]{,50}$
               required: true,
+              pattern: '^[a-zA-Z][a-zA-Z0-9-_\.\-]{1,20}$',
               maxlength: 50
             },
             designation: {
-              name: ^[a-zA-Z0-9-\.]{1,50}$
               required:true,
               maxlength: 50,
+              pattern: '^[a-zA-Z][a-zA-Z0-9-_\.\-]{1,20}$',
               minlength: 2
             },
             country: "required",
+            // datepicker: {
+            //   required: true,
+            //   date: true
+            // },
             dateofjoin: "required",
             socialm: {
-              name: /^([w-.]+@([w-]+.)+[w-]{2,4})?$/,
               maxlength: 20
             }
   				},
   				messages: {
   					firstname: {
               required: "Please enter your First Name.",
-              name: "Only Alphabets and . (dot) are allowed.",
+              pattern: "Only Alphabets and . (dot) are allowed.",
               minlength: "Your First Name must consist of at least 3 characters.",
               maxlength: "Your First Name can consist of at most 50 characters."
             },
   					lastname: {
               required: "Please enter your Last Name.",
-              name: "Only Alphabets and . (dot) are allowed.",
+              pattern: "Only Alphabets and . (dot) are allowed.",
               minlength: "Your Last Name must consist of at least 3 characters.",
               maxlength: "Your Last Name can consist of at most 50 characters."
             },
@@ -410,16 +416,19 @@
             },
             company: {
               required: "Please enter your Company's Name.",
-              name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+              pattern: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
               maxlength: "Your Company's Name can consist of at most 50 characters."
             },
             designation: {
               required: "Please enter your Designation.",
-              name: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
+              pattern: "Only Alphabets, Numbers, . (dot) and - (dash)  are allowed.",
               minlength: "Your Designation must consist of at least 2 characters.",
               maxlength: "Your Designation can consist of at most 50 characters."
             },
             country: "Please enter your country",
+            // datepicker: {
+            //   required: "Please enter your Date of Joining"
+            // },
             dateofjoin: "Please enter your Date of Joining",
             socialm: {
               name: "Enter a valid URL.",

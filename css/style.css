@@ -14,7 +14,7 @@ label{
   letter-spacing: 1.75;
 }
 
-input[type=text], #country, #info{
+input, #country, #info{
     box-sizing: border-box;
     border: 2px solid #d2e3e5;
 }
