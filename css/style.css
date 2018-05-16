@@ -19,7 +19,11 @@ input, #country, #info{
     border: 2px solid #d2e3e5;
 }
 
-#socialm{
+#linkedin{
+  border: 2px solid #6C9BA9;
+}
+
+#instagram{
   border: 2px solid #6C9BA9;
 }
 
