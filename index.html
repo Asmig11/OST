@@ -306,7 +306,7 @@
                     <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
-                </div>
+                  </div>
                 </div>
               </div>
               <div class="row" style="padding-top: 1%;">
@@ -366,7 +366,7 @@
   				rules: {
   					firstname: {
               required:true,
-              pattern: '^[a-zA-Z][a-zA-Z0-9-_\.]{1,}$',
+              pattern:  '[^a-zA-Z\.]{2,50}$',
               maxlength: 50,
               minlength: 3
             },
@@ -395,11 +395,11 @@
             country: {
               required: true
             },
-            datepicker: {
+            datetimepicker4: {
               required: true,
               date: true
             },
-            // dateofjoin: "required",
+            dateofjoin: "required",
             linkedin: {
               pattern: '^https:\/\/[a-z]{1,3}\.linkedin\.com\/.*$',
               maxlength: 50
@@ -441,7 +441,7 @@
             country: {
               required: "Please enter your country"
             },
-            datepicker: {
+            datetimepicker4: {
               required: "Please enter your Date of Joining"
             },
             // dateofjoin: "Please enter your Date of Joining",
